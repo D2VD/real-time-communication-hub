@@ -16,14 +16,17 @@
     <!-- Babel Standalone for in-browser transpilation -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <script type="systemjs-importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@18.2.0?dev",
-        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?dev"
-      }
-    }
-    </script>
+    <!-- A single, standard import map that SystemJS will use -->
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0?dev",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client?dev",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
     
     <script>
       // This script configures SystemJS to use Babel Standalone for transpiling TSX/TS files.
@@ -56,16 +59,7 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation@0.1.1675465747/selfie_segmentation.js" crossorigin="anonymous"></script>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "react/": "https://aistudiocdn.com/react@^19.1.1/"
-  }
-}
-</script>
-</head>
+  </head>
   <body class="bg-gray-900 text-white antialiased">
     <div id="root"></div>
     <!-- Use SystemJS to load the main app file -->
