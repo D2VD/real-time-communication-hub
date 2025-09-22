@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MicIcon, MicOffIcon, VideoIcon, VideoOffIcon, UserIcon, SparklesIcon } from './Icons';
-import { VirtualBackground } from '../types';
-import useVirtualBackground from '../hooks/useVirtualBackground';
-import VirtualBackgroundPanel from './VirtualBackgroundPanel';
+import { MicIcon, MicOffIcon, VideoIcon, VideoOffIcon, UserIcon, SparklesIcon } from './Icons.tsx';
+import { VirtualBackground } from '../types.ts';
+import useVirtualBackground from '../hooks/useVirtualBackground.ts';
+import VirtualBackgroundPanel from './VirtualBackgroundPanel.tsx';
 
 interface LobbyProps {
   onJoin: (name: string, stream: MediaStream, background: VirtualBackground) => void;

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { Participant } from '../types';
-import { MicOffIcon, UserIcon, VideoOffIcon } from './Icons';
-import EditableName from './EditableName';
+import { Participant } from '../types.ts';
+import { MicOffIcon, UserIcon, VideoOffIcon } from './Icons.tsx';
+import EditableName from './EditableName.tsx';
 
 interface VideoTileProps {
   participant: Participant;

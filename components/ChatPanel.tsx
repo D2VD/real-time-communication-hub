@@ -1,8 +1,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Message, Participant } from '../types';
-import { XIcon, SendIcon } from './Icons';
-import EditableName from './EditableName';
+import { Message, Participant } from '../types.ts';
+import { XIcon, SendIcon } from './Icons.tsx';
+import EditableName from './EditableName.tsx';
 
 interface ChatPanelProps {
   messages: Message[];

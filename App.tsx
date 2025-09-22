@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Lobby from './components/Lobby';
-import CallView from './components/CallView';
-import { Participant, Message, VirtualBackground } from './types';
-import ErrorNotification from './components/ErrorNotification';
-import useVirtualBackground from './hooks/useVirtualBackground';
+import Lobby from './components/Lobby.tsx';
+import CallView from './components/CallView.tsx';
+import { Participant, Message, VirtualBackground } from './types.ts';
+import ErrorNotification from './components/ErrorNotification.tsx';
+import useVirtualBackground from './hooks/useVirtualBackground.ts';
 
 const App: React.FC = () => {
   const [isInCall, setIsInCall] = useState<boolean>(false);

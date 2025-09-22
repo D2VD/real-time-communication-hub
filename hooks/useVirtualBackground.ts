@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { VirtualBackground } from '../types';
+import { VirtualBackground } from '../types.ts';
 
 declare global {
   interface Window {

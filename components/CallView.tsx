@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Participant, Message, VirtualBackground } from '../types';
-import VideoGrid from './VideoGrid';
-import ChatPanel from './ChatPanel';
-import ControlBar from './ControlBar';
-import ScreenShareIndicator from './ScreenShareIndicator';
-import { ChevronLeftIcon, ChevronRightIcon } from './Icons';
-import VirtualBackgroundPanel from './VirtualBackgroundPanel';
+import { Participant, Message, VirtualBackground } from '../types.ts';
+import VideoGrid from './VideoGrid.tsx';
+import ChatPanel from './ChatPanel.tsx';
+import ControlBar from './ControlBar.tsx';
+import ScreenShareIndicator from './ScreenShareIndicator.tsx';
+import { ChevronLeftIcon, ChevronRightIcon } from './Icons.tsx';
+import VirtualBackgroundPanel from './VirtualBackgroundPanel.tsx';
 
 
 interface CallViewProps {

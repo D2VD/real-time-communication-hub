@@ -1,5 +1,5 @@
 import React from 'react';
-import { XIcon } from './Icons';
+import { XIcon } from './Icons.tsx';
 
 interface ErrorNotificationProps {
   message: string | null;

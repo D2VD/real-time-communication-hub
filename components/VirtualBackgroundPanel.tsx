@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { VirtualBackground } from '../types';
-import { XIcon } from './Icons';
+import { VirtualBackground } from '../types.ts';
+import { XIcon } from './Icons.tsx';
 
 interface VirtualBackgroundPanelProps {
   onBackgroundChange: (bg: VirtualBackground) => void;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Participant } from '../types';
-import VideoTile from './VideoTile';
-import { MicOffIcon, VideoOffIcon } from './Icons';
-import EditableName from './EditableName';
+import { Participant } from '../types.ts';
+import VideoTile from './VideoTile.tsx';
+import { MicOffIcon, VideoOffIcon } from './Icons.tsx';
+import EditableName from './EditableName.tsx';
 
 interface VideoGridProps {
   participants: Participant[];

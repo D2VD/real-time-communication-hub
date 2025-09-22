@@ -1,5 +1,5 @@
 import React from 'react';
-import { MicIcon, MicOffIcon, VideoIcon, VideoOffIcon, PhoneMissedCallIcon, ChatIcon, ScreenShareIcon, SparklesIcon, VolumeUpIcon, VolumeOffIcon } from './Icons';
+import { MicIcon, MicOffIcon, VideoIcon, VideoOffIcon, PhoneMissedCallIcon, ChatIcon, ScreenShareIcon, SparklesIcon, VolumeUpIcon, VolumeOffIcon } from './Icons.tsx';
 
 interface ControlBarProps {
   isMuted: boolean;
