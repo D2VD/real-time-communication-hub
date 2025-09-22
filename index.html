@@ -11,9 +11,10 @@
       }
     </style>
     
-    <!-- SystemJS for in-browser module loading and transpilation -->
+    <!-- SystemJS for module loading -->
     <script src="https://unpkg.com/systemjs@6.14.3/dist/s.min.js"></script>
-    <script src="https://unpkg.com/systemjs-plugin-babel@0.0.25/plugin-babel.js"></script>
+    <!-- Babel Standalone for in-browser transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="systemjs-importmap">
     {
@@ -23,27 +24,47 @@
       }
     }
     </script>
+    
     <script>
-      System.config({
-        transpiler: 'plugin-babel',
-        babelOptions: {
-          react: true,
-          typescript: true
-        }
-      });
+      // This script configures SystemJS to use Babel Standalone for transpiling TSX/TS files.
+      // It overrides the default fetch mechanism to transform the code before execution.
+      (function () {
+        const originalFetch = window.fetch;
+
+        System.fetch = async function (url, options) {
+          const response = await originalFetch(url, options);
+          if (!response.ok) {
+            return response;
+          }
+          
+          // Check if the file is a TypeScript/TSX file
+          if (url.endsWith('.tsx') || url.endsWith('.ts')) {
+            const source = await response.text();
+            // Use Babel to transform the code into browser-compatible JavaScript
+            const transformed = Babel.transform(source, {
+              presets: ['react', 'typescript'],
+              filename: url, // Provides better error messages
+              sourceMaps: 'inline'
+            }).code;
+            // Return the transformed code as a JavaScript module
+            return new Response(new Blob([transformed], { type: 'application/javascript' }));
+          }
+          
+          return response;
+        };
+      })();
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation@0.1.1675465747/selfie_segmentation.js" crossorigin="anonymous"></script>
   <script type="importmap">
 {
   "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1"
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-gray-900 text-white antialiased">
     <div id="root"></div>
@@ -51,6 +72,5 @@
     <script>
       System.import('./index.tsx').catch(function(err){ console.error(err); });
     </script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+  </body>
 </html>
