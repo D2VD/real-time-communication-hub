@@ -1,0 +1,9 @@
+{
+  "name": "Real-Time Communication Hub",
+  "description": "A modern web application for multi-user video calls, voice calls, and real-time messaging, built with React and Tailwind CSS. This is a UI demonstration and does not include a backend for actual multi-user connectivity.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "display-capture"
+  ]
+}
